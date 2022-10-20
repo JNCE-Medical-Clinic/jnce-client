@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "abstracts/variables";
+@import "base/global";
+@import "base/reset";
+@import "base/typography";
+
+/* ========== Components ========== */
+@import "components/banner";
+@import "components/marquee";
+@import "components/loader";
