@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const AnimatedLetters = ({ title, disabled }) => {
+const AnimatedLetters = ({ title, disabled, toggleMenu, toggleClicked }) => {
   return (
     <motion.span
       className='row-title'
@@ -41,4 +41,4 @@ const letterAni = {
   },
 };
 
-export default AnimatedLetters
+export default AnimatedLetters;

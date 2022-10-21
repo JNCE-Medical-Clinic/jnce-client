@@ -1,0 +1,26 @@
+.nav__container {
+  width: 100%;
+
+  .app__navbar {
+    max-width: 85%;
+    width: 100%;
+    margin: $center-margin;
+    padding: 2rem 2rem;
+  }
+
+  .app__navbar--smallscreen {
+
+    .book-smallscreen {
+      margin: $center-margin;
+    }
+  }
+}
+
+/* ===== Media Queries ===== */
+
+@media (max-width: $layout-breakpoint-small) {
+
+  .app__navbar {
+    max-width: 100%;
+  }
+}

@@ -1,8 +1,8 @@
-import Loader from "../components/Landing/Loader";
-import Banner from "../components/Landing/Banner";
-
 import { useState, useEffect } from "react";
 import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
+
+import Navbar from "../components/Landing/Navbar";
+import Loader from "../components/Landing/Loader";
 
 export default function Home() {
   // state management
@@ -25,16 +25,7 @@ export default function Home() {
             </motion.div>
           ) : (
             <>
-              <Banner />
-              {!loading && (
-                <div className='transition-image final'>
-                  <motion.img
-                    transition={{ ease: [0.6, 0.01, -0.05, 0.9], duration: 1.6 }}
-                    src={`/images/image-2.jpg`}
-                    layoutId='main-image-1'
-                  />
-                </div>
-              )}
+              <Navbar loading={loading} />
             </>
           )}
         </AnimatePresence>

@@ -1,13 +1,13 @@
-import AnimatedLetters from "./AnimatedLetters";
-
 import React from "react";
 import { motion } from "framer-motion";
 
-const BannerRowTop = ({ title }) => {
+import AnimatedLetters from "./AnimatedLetters";
+
+const BannerRowTop = ({ title, toggleMenu }) => {
   return (
-    <div className={"banner-row"}>
+    <div className="banner-row -mt-10">
       <div className='row-col'>
-        <AnimatedLetters title={title} />
+        <AnimatedLetters title={title} toggleMenu={toggleMenu} />
       </div>
       <motion.div
         initial={{ opacity: 0, y: 80 }}

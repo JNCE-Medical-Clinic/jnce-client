@@ -1,7 +1,7 @@
-import AnimatedLetters from "./AnimatedLetters";
-
 import React from "react";
 import { motion } from "framer-motion";
+
+import AnimatedLetters from "./AnimatedLetters";
 
 const BannerRowBottom = ({ title }) => {
   return (

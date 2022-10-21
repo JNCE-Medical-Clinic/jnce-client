@@ -5,7 +5,7 @@ import BannerRowTop from "./BannerPositions/BannerRowTop"
 import BannerRowCenter from "./BannerPositions/BannerRowCenter"
 import BannerRowBottom from "./BannerPositions/BannerRowBottom"
 
-const Banner = () => {
+const Banner = ({ toggleMenu }) => {
   // state management
   const [playMarquee, setPlayMarquee] = useState(false);
 
@@ -17,11 +17,14 @@ const Banner = () => {
   }, []);
 
   return (
-    <motion.div className='banner' variants={banner}>
-      <BannerRowTop title={"JNCE"} />
-      <BannerRowCenter title={"Medical"} playMarquee={playMarquee} />
-      <BannerRowBottom title={"Clinic"} />
-    </motion.div>
+    <>
+      <motion.div className='banner' variants={banner}>
+        <BannerRowTop title={"JNCE"} toggleMenu={toggleMenu} />
+        <BannerRowCenter title={"Medical"} playMarquee={playMarquee} />
+        <BannerRowBottom title={"Clinic"} />
+      </motion.div>
+    </>
+
   )
 };
 

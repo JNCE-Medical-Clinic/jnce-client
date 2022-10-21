@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import Image from "./Image";
+import Image from "../Common/Image";
 
 const ImageCards = ({ posX, posY, variants, id }) => {
   return (
