@@ -1,0 +1,62 @@
+.app__navbar {
+  height: 156px;
+  padding: 0 108px;
+
+  @media (max-width: $layout-breakpoint-medium) {
+    padding: 0 72px;
+  }
+
+  @media (max-width: $layout-breakpoint-xsmall) {
+    padding: 0 12px;
+    height: 96px;
+  }
+
+  .app__navbar--container {
+
+    .app__navbar--links {
+      transform: translateX(-50%);
+
+      @media (max-width: $layout-breakpoint-medium) {
+        display: none;
+      }
+
+      li {
+        list-style: none;
+        margin: 0 20px;
+
+        a {
+          text-decoration: none;
+          white-space: nowrap;
+        }
+      }
+    }
+
+    .app__navbar--buttons {
+
+      @media (max-width: $layout-breakpoint-medium) {
+        flex: 1;
+      }
+
+      @media (max-width: $layout-breakpoint-tablet) {
+        display: none;
+      }
+
+      a {
+        text-decoration: none;
+        padding-bottom: 12px;
+        white-space: nowrap;
+
+        @media (max-width: $layout-breakpoint-xsmall) {
+          border: none;
+        }
+      }
+    }
+
+    .app__navbar--toggle {
+
+      @media (min-width: $layout-breakpoint-medium) {
+        display: none;
+      }
+    }
+  }
+}
