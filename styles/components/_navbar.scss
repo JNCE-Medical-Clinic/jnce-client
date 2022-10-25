@@ -16,7 +16,7 @@
     .app__navbar--links {
       transform: translateX(-50%);
 
-      @media (max-width: $layout-breakpoint-medium) {
+      @media (max-width: 1441px) {
         display: none;
       }
 
@@ -54,7 +54,7 @@
 
     .app__navbar--toggle {
 
-      @media (min-width: $layout-breakpoint-medium) {
+      @media (min-width: 1441px) {
         display: none;
       }
     }

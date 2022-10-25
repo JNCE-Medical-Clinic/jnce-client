@@ -1,6 +1,7 @@
 .banner {
   z-index: 100;
   position: relative;
+  margin-top: 5rem;
 
   .banner-row {
     overflow: hidden;
@@ -19,12 +20,20 @@
 
     .row-title,
     .row-letter {
-      font-size: 28rem;
+      font-size: 20rem;
       font-weight: 500;
       position: relative;
       letter-spacing: -0.8rem;
       display: inline-block;
       white-space: nowrap;
+
+      @media (max-width: $layout-breakpoint-mini-medium) {
+        font-size: 18rem;
+      }
+
+      @media (max-width: $layout-breakpoint-tablet) {
+        font-size: 15rem;
+      }
 
       @media (max-width: $layout-breakpoint-xsmall) {
         font-size: 13rem;

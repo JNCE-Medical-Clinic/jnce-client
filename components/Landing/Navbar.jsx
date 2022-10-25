@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -9,8 +9,29 @@ import {
 } from "react-icons/md";
 
 import { GiHamburgerMenu } from 'react-icons/gi';
+import { IoIosClose } from 'react-icons/io';
 
 const Navbar = () => {
+  // state management
+  const [toggleMenu, setToggleMenu] = useState(false);
+
+  // useEffect
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      let myWidth  = window.innerWidth;
+      setToggle(myWidth)
+   })
+  }, [window])
+
+  useEffect(() => {
+  }, [toggleMenu])
+
+  const setToggle = (width) => {
+    if (width > 1440) {
+      setToggleMenu(false);
+    }
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, y: -180 }}
@@ -62,10 +83,20 @@ const Navbar = () => {
 
         {/* toggle menu for small screen */}
         <div className="app__navbar--toggle custom:mr-10 sm:mr-10 lg:mr-0 custom:mt-5 sm:mt-5 lg:ml-0">
-          <GiHamburgerMenu
+          {!toggleMenu && (
+            <GiHamburgerMenu
             className="cursor-pointer"
             size={30}
+            onClick={() => {setToggleMenu(!toggleMenu)}}
           />
+          )}
+          {toggleMenu && (
+            <IoIosClose
+              className="cursor-pointer"
+              size={45}
+              onClick={() => setToggleMenu(!toggleMenu)}
+            />
+          )}
         </div>
       </div>
     </motion.div>
