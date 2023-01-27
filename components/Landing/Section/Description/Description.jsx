@@ -57,14 +57,14 @@ const Description = () => {
       <div className="mt-40 grid grid-cols-2 place-items-center">
         <div ref={ref} className="about__mission">
           <motion.h1 
-            animate={animationLeft} 
+            animate={animationRight} 
             className="custom:text-4xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl text-center font-bold"
           >
             Quality Policy
           </motion.h1>
           <motion.p 
             animate={fade} 
-            className="custom:text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-3xl indent-8 mt-4 text-center italic leading-10"
+            className="ml-5 custom:text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-3xl indent-8 mt-4 text-center italic leading-10"
           >
             "JNCE Medical and Diagnostic Clinic shall strive to satisfy our clients <br /> by providing them quality medical service at reasonable cost. <br />
             We shall continually strive to maintaiin excellence by maintaining a high qualified, <br /> efficient and competent medical staffs.
@@ -88,14 +88,14 @@ const Description = () => {
         </div>
         <div ref={ref} className="about__vision">
           <motion.h1 
-            animate={animationRight} 
+            animate={animationLeft} 
             className="custom:text-4xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl text-center font-bold"
           >
             Quality Objectives
           </motion.h1>
           <motion.p 
             animate={fade} 
-            className="custom:text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-3xl indent-8 mt-4 text-center italic leading-10"
+            className="mr-5 custom:text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-3xl indent-8 mt-4 text-center italic leading-10"
           >
             "To satisfy clients thru prompt delivery of medical services <br /> To delivery PEME results within 24 hours <br /> after completion of required PEME package." <br />
             To comply 100% to legal regulatory requirement for medical clinics. <br /> To control repartriation rate not to exceed 0.1% annually.

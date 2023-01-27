@@ -5,6 +5,7 @@ import Loader from "../components/Landing/Loader";
 import Navbar from "../components/Landing/Navbar";
 import Banner from "../components/Landing/Banner";
 import Section from "../components/Landing/Section";
+import Footer from "../components/Landing/Footer";
 import ScrollTopArrow from "../components/Common/ScrollTopArrow";
 
 import { gsap } from "gsap/dist/gsap";
@@ -58,6 +59,9 @@ export default function Home() {
 
               {/* section */}
               <Section />
+
+              {/* footer */}
+              <Footer />
             </>
           )}
         </AnimatePresence>
