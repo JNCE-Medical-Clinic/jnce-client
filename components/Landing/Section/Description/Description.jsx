@@ -58,13 +58,13 @@ const Description = () => {
         <div ref={ref} className="about__mission">
           <motion.h1 
             animate={animationLeft} 
-            className="custom:text-4xl sm:text-4xl xl:text-6xl 2xl:text-6xl text-center font-bold"
+            className="custom:text-4xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl text-center font-bold"
           >
             Quality Policy
           </motion.h1>
           <motion.p 
             animate={fade} 
-            className="custom:text-xl sm:text-xl lg:text-2xl xl:text-3xl 2xl:text-3xl indent-8 mt-4 text-center italic leading-10"
+            className="custom:text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-3xl indent-8 mt-4 text-center italic leading-10"
           >
             "JNCE Medical and Diagnostic Clinic shall strive to satisfy our clients <br /> by providing them quality medical service at reasonable cost. <br />
             We shall continually strive to maintaiin excellence by maintaining a high qualified, <br /> efficient and competent medical staffs.
@@ -72,16 +72,16 @@ const Description = () => {
         </div>
         <div className="about_mission--img ml-2">
           <Image
-            className="custom:w-3/4 sm:w-3/4 lg:w-[95%] xl:w-[100%] 2xl:w-[350px]"
+            className="custom:w-3/4 sm:w-3/4 md:w-3/4 lg:w-[95%] xl:w-[100%] 2xl:w-[350px]"
             src={`/static/svg/mission.svg`}
             alt="mission svg"
           />
         </div>
       </div>
-      <div className="mt-40 mb-40 grid grid-cols-2 place-items-center">
+      <div className="mt-40 grid grid-cols-2 place-items-center">
         <div className="about_vision--img">
           <Image
-            className="custom:w-3/4 sm:w-3/4 lg:w-[95%] xl:w-[100%] 2xl:w-[350px]"
+            className="custom:w-3/4 sm:w-3/4 md:w-3/4 lg:w-[95%] xl:w-[100%] 2xl:w-[350px]"
             src={`/static/svg/vision.svg`} 
             alt="vision svg" 
           />
@@ -89,13 +89,13 @@ const Description = () => {
         <div ref={ref} className="about__vision">
           <motion.h1 
             animate={animationRight} 
-            className="custom:text-4xl sm:text-4xl xl:text-6xl 2xl:text-6xl text-center font-bold"
+            className="custom:text-4xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl text-center font-bold"
           >
             Quality Objectives
           </motion.h1>
           <motion.p 
             animate={fade} 
-            className="custom:text-xl sm:text-xl lg:text-2xl xl:text-3xl 2xl:text-3xl indent-8 mt-4 text-center italic leading-10"
+            className="custom:text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-3xl indent-8 mt-4 text-center italic leading-10"
           >
             "To satisfy clients thru prompt delivery of medical services <br /> To delivery PEME results within 24 hours <br /> after completion of required PEME package." <br />
             To comply 100% to legal regulatory requirement for medical clinics. <br /> To control repartriation rate not to exceed 0.1% annually.
@@ -103,7 +103,6 @@ const Description = () => {
         </div>
       </div>
     </div>
-
   )
 }
 
