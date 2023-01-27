@@ -14,7 +14,7 @@ const ImageCards = ({ posX, posY, variants, id }) => {
       }}
     >
       <Image
-        src={`/images/${id}.jpg`}
+        src={`/static/images/${id}.jpg`}
         alt={id}
       />
     </motion.div>

@@ -50,7 +50,7 @@ export default function Home() {
                       ease: [0.6, 0.01, -0.05, 0.9],
                       duration: 1.6,
                     }}
-                    src={`/images/image-2.jpg`}
+                    src={`static/images/image-2.jpg`}
                     layoutId="main-image-1"
                   />
                 </div>

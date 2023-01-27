@@ -79,13 +79,13 @@ const Services = () => {
     <div className="gallery-container flex flex-nowrap w-[300%] h-screen custom:text-4xl sm:text-4xl lg:text-5xl 2xl:text-6xl text-gray-500 p-5 font-semibold">
       {/* First Scroll */}
       <section className="gallery-items flex flex-col relative items-center justify-center w-screen h-full text-center">
-        <div ref={ref} className="top-images flex items-center gap-[17.5rem] custom:gap-8 sm:gap-7">
+        <div ref={ref} className="top-images flex items-center gap-[12rem] custom:gap-8 sm:gap-7">
           <motion.div
             animate={scaleUp}
             transition={{type: 'spring', bounce: 0.1, delay: 0}}
           >
             <Image 
-              src={'images/image-1.jpg'}
+              src={'static/images/image-1.jpg'}
               className="custom:w-[200px] sm:w-[200px] 2xl:w-[320px] custom:h-[300px] sm:h-[300px] 2xl:h-[350px] -mt-[12.5rem]"
             />
           </motion.div>
@@ -95,7 +95,7 @@ const Services = () => {
             transition={{type: 'spring', bounce: 0.1, delay: 0.2}}
           >
             <Image
-              src={'images/image-3.jpg'}
+              src={'static/images/image-3.jpg'}
               className="custom:w-[300px] sm:w-[300px] 2xl:w-[352px] custom:h-[325px] sm:h-[325px] 2xl:h-[375px]"
             />
           </motion.div>
@@ -105,8 +105,8 @@ const Services = () => {
             transition={{type: 'spring', bounce: 0.1, delay: 0.3}}
           >
             <Image
-              src={'images/image-4.jpg'}
-              className="w-[200px] h-[250px]"
+              src={'static/images/image-4.jpg'}
+              className="w-[350px] h-[250px]"
             />
           </motion.div>
         </div>
@@ -121,7 +121,7 @@ const Services = () => {
             transition={{type: 'spring', bounce: 0.1, delay: 0.2}}
           >
             <Image 
-              src={'images/service-1.jpg'}
+              src={'static/images/service-1.jpg'}
               className="custom:w-[200px] sm:w-[200px] 2xl:w-[300px] h-[350px]"
             />
           </motion.div>
@@ -131,7 +131,7 @@ const Services = () => {
             transition={{type: 'spring', bounce: 0.1, delay: 0.15}}
           >
             <Image 
-              src={'images/service-2.jpg'}
+              src={'static/images/service-2.jpg'}
               className="custom:w-[150px] sm:w-[150px] 2xl:w-[200px] h-[200px] custom:ml-5 sm:ml-5 2xl:ml-[20rem] -mt-[12.5rem]"
             />
           </motion.div>
@@ -140,13 +140,13 @@ const Services = () => {
 
       {/* Second Scroll */}
       <section className="gallery-items flex flex-col relative items-center justify-center w-screen h-full text-center">
-        <div className="top-images flex items-center gap-[17.5rem] custom:gap-8 sm:gap-7">
+        <div className="top-images flex items-center gap-[12rem] custom:gap-8 sm:gap-7">
           <motion.div
             animate={scaleDown}
             transition={{type: 'spring', bounce: 0.1, delay: 0}}
           >
             <Image 
-              src={'images/service-3.jpg'}
+              src={'static/images/service-3.jpg'}
               className="custom:w-[200px] sm:w-[200px] 2xl:w-[320px] custom:h-[300px] sm:h-[300px] 2xl:h-[350px] -mt-[12.5rem]"
             />
           </motion.div>
@@ -156,7 +156,7 @@ const Services = () => {
             transition={{type: 'spring', bounce: 0.1, delay: 0.1}}
           >
             <Image 
-              src={'images/service-4.jpg'}
+              src={'static/images/service-4.jpg'}
               className="custom:w-[300px] sm:w-[300px] 2xl:w-[352px] custom:h-[325px] sm:h-[325px] 2xl:h-[375px]"
             />
           </motion.div>
@@ -166,7 +166,7 @@ const Services = () => {
             transition={{type: 'spring', bounce: 0.1, delay: 0.2}}
           >
             <Image 
-              src={'images/service-5.jpg'}
+              src={'static/images/service-5.jpg'}
               className="w-[200px] h-[250px]"
             />
           </motion.div>
@@ -182,7 +182,7 @@ const Services = () => {
             transition={{type: 'spring', bounce: 0.1, delay: 0.1}}
           >
             <Image 
-              src={'images/service-6.jpg'}
+              src={'static/images/service-6.jpg'}
               className="custom:w-[200px] sm:w-[200px] 2xl:w-[300px] h-[350px]"
             />
           </motion.div>
@@ -192,7 +192,7 @@ const Services = () => {
             transition={{type: 'spring', bounce: 0.1, delay: 0.2}}
           >
             <Image 
-              src={'images/service-7.jpg'}
+              src={'static/images/service-7.jpg'}
               className="custom:w-[150px] sm:w-[150px] 2xl:w-[200px] h-[200px] custom:ml-5 sm:ml-5 2xl:ml-[20rem] -mt-[12.5rem]"
             />
           </motion.div>
@@ -204,7 +204,7 @@ const Services = () => {
         <motion.div
           animate={fadeFromLeft}
           transition={{type: 'spring', bounce: 0.1, delay: 0.35, duration: 1.5}} 
-          className="flex custom:flex-col sm:flex-col md:flex-col 2xl:flex-row items-center custom:text-center sm:text-center md:text-center lg:text-left gap-20"
+          className="flex custom:flex-col sm:flex-col md:flex-col 2xl:flex-row items-center custom:text-center sm:text-center md:text-center lg:text-center xl:text-center 2xl:text-left gap-20"
         >
           <p>Laboratory Facility and <br /> Medical Consultation</p>
           <p>Electrocardiogram</p>
@@ -214,7 +214,7 @@ const Services = () => {
         <motion.div
           animate={fadeFromLeft}
           transition={{type: 'spring', bounce: 0.1, delay: 0.35, duration: 1.5}} 
-          className="flex custom:flex-col sm:flex-col md:flex-col 2xl:flex-row items-center custom:text-center sm:text-center md:text-center lg:text-left gap-20"
+          className="flex custom:flex-col sm:flex-col md:flex-col 2xl:flex-row items-center custom:text-center sm:text-center md:text-center lg:text-center xl:text-center 2xl:text-left gap-20"
         >
           <p>Dental Services</p>
           <p>Pre Employment and <br /> Seafarer's Medical Examination</p>

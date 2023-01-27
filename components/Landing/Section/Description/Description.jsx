@@ -1,0 +1,93 @@
+import React, { useEffect } from "react";
+import { useInView } from 'react-intersection-observer';
+import { motion, useAnimation } from "framer-motion";
+
+import Image from "../../../Common/Image";
+
+const Description = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.25
+  });
+
+  const animationLeft = useAnimation();
+  const animationRight = useAnimation();
+  const fade = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      fade.start({
+        opacity: 1
+      });
+      animationLeft.start({
+        x: 0,
+        transition: {
+          type: 'spring', duration: 1, bounce: 0.3
+        }
+      });
+      animationRight.start({
+        x: 0,
+        transition: {
+          type: 'spring', duration: 1, bounce: 0.3
+        }
+      });
+    }
+
+    if (!inView) {
+      fade.start({
+        opacity: 0
+      });
+      animationLeft.start({
+        x: '-100px',
+      });
+      animationRight.start({
+        x: '100px'
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [inView]);
+
+  return (
+    <div>
+      {/* Top */}
+      <div className="description__header font-semibold text-center text-[6vw]">
+        <p className="description--text">We Are <span className="text-green-800">JNCE</span> Medical & Diagnostic Clinic</p>
+      </div>
+
+      {/* Middle */}
+      <div className="about__container--mission mt-40 grid grid-cols-2 place-items-center">
+        <div ref={ref} className="about__mission">
+          <motion.h1 animate={animationLeft} className="custom:text-4xl sm:text-4xl xl:text-5xl 2xl:text-5xl text-center font-bold">Quality Policy</motion.h1>
+          <motion.p animate={fade} className="custom:text-xl sm:text-xl xl:text-2xl 2xl:text-2xl indent-8 mt-4 text-center italic leading-10">"JNCE Medical and Diagnostic Clinic shall strive to satisfy our clients <br /> by providing them quality medical service at reasonable cost.</motion.p>
+        </div>
+        <div className="about_mission--img ml-2">
+          <Image
+            className="w-3/4"
+            src={`/static/svg/mission.svg`}
+            alt="mission svg"
+          />
+        </div>
+      </div>
+      <div className="about__container--vision mt-20 mb-40 grid grid-cols-2 place-items-center">
+        <div className="about_vision--img">
+          <Image
+            className="w-3/4"
+            src={`/static/svg/vision.svg`} 
+            alt="vision svg" 
+          />
+        </div>
+        <div ref={ref} className="about__vision">
+          <motion.h1 animate={animationRight} className="custom:text-4xl sm:text-4xl xl:text-5xl 2xl:text-5xl text-center font-bold">Quality Objectives</motion.h1>
+          <motion.p animate={fade} className="custom:text-xl sm:text-xl xl:text-2xl 2xl:text-2xl indent-8 mt-4 text-center italic leading-10">"To satisfy clients thru prompt delivery of medical services <br /> To delivery PEME results within 24 hours <br /> after completion of required PEME package."</motion.p>
+        </div>
+      </div>
+
+      {/* Bottom */}
+      <div className="description__header mb-40 font-semibold text-center text-[6vw]">
+        <p className="description--text">Quality Medical Service at Reasonable Cost</p>
+      </div>
+    </div>
+
+  )
+}
+
+export default Description;

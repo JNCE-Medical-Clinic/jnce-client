@@ -1,6 +1,6 @@
 import React from "react";
 
-import Description from "./Description";
+import Description from "./Description/Description";
 import MissionVisionSection from "./MissionVission";
 
 const About = () => {

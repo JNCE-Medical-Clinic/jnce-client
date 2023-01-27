@@ -50,7 +50,7 @@ const Navbar = () => {
         {/* logo */}
         <div className="app__navbar--logo">
           <Image
-            src={`images/jnce-logo.jpg`}
+            src={`/static/images/jnce-logo.jpg`}
             alt="logo"
             className="mt-10 w-3/4 custom:w-2/4 xl:w-3/4 2xl:w-3/4 custom:ml-5 xl:ml-0 2xl:ml-0"
           />

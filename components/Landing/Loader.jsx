@@ -18,7 +18,7 @@ const Loader = ({ setLoading }) => {
         <motion.div variants={itemMain} className="transition-image h-screen">
           <motion.img
             layoutId="main-image-1"
-            src={`/images/image-2.jpg`}
+            src={`static/images/image-2.jpg`}
           />
         </motion.div>
         <ImageCards variants={item} id="image-3" />
