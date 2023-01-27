@@ -43,7 +43,7 @@ const Footer = () => {
             </div>
             <div>
               <span className="text-2xl tracking-wide">
-                We care about your families.
+                We care about what you aim for
               </span>
             </div>
             <div className="flex gap-4">

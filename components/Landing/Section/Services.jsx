@@ -76,7 +76,8 @@ const Services = () => {
   }, [inView]);
 
   return (
-    <div className="gallery-container flex flex-nowrap w-[300%] h-screen custom:text-4xl sm:text-4xl lg:text-5xl 2xl:text-6xl text-gray-500 p-5 font-semibold">
+    // change services layout when phone
+    <div className="gallery-container custom:hidden sm:hidden md:hidden lg:flex xl:flex 2xl:flex flex flex-nowrap w-[300%] h-screen custom:text-4xl sm:text-4xl lg:text-5xl 2xl:text-6xl text-gray-500 p-5 font-semibold">
       {/* First Scroll */}
       <section className="gallery-items flex flex-col relative items-center justify-center w-screen h-full text-center">
         <div ref={ref} className="top-images flex items-center gap-[12rem] custom:gap-8 sm:gap-7">
