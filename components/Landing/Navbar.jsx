@@ -16,12 +16,15 @@ const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   // useEffect
-  useEffect(() => {
-    window.addEventListener('resize', () => {
-      let myWidth  = window.innerWidth;
-      setToggle(myWidth)
-   })
-  }, [window])
+  if (typeof window !== "undefined") {
+    useEffect(() => {
+      window.addEventListener('resize', () => {
+        let myWidth  = window.innerWidth;
+        setToggle(myWidth)
+     })
+    }, [window])
+  }
+
 
   useEffect(() => {
   }, [toggleMenu])
@@ -67,12 +70,7 @@ const Navbar = () => {
         </nav>
 
         {/* buttons */}
-        <div className="app__navbar--buttons flex items-center gap-10 absolute right-[15rem]">
-          <Link href="/book-appointment">
-            <div className="cursor-pointer text-3xl font-semibold bg-green-800 text-white p-5 border-none outline-none rounded-md">
-              Book Appointment
-            </div>
-          </Link>
+        <div className="app__navbar--buttons flex items-center absolute right-[15rem]">
           <Link href="/book-appointment">
             <div className="cursor-pointer text-3xl flex items-center gap-2 font-semibold">
               <MdOutlineLogin size={30} />

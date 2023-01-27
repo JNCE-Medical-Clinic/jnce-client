@@ -15,7 +15,7 @@ const Loader = ({ setLoading }) => {
         className="loader-inner"
       >
         <ImageCards variants={item} id="image-1" />
-        <motion.div variants={itemMain} className="transition-image">
+        <motion.div variants={itemMain} className="transition-image h-screen">
           <motion.img
             layoutId="main-image-1"
             src={`/images/image-2.jpg`}
@@ -30,7 +30,6 @@ const Loader = ({ setLoading }) => {
 };
 
 // data
-
 const container = {
   show: {
     transition: {
