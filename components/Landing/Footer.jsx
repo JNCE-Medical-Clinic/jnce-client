@@ -32,8 +32,8 @@ const Footer = () => {
 
       {/* Middle */}
       <div className="footer__body h-auto px-8 py-12 bg-[#f6f6f9] text-slate-500 font-semibold flex justify-center">
-        <div className="footer__body--container w-10/12 grid grid-cols-4 place-items-center text-sm">
-          <div className="jnce flex flex-col gap-2">
+        <div className="w-3/4">
+          <div className="flex flex-col gap-2">
             <div>
               <Image
                 className="h-20 w-auto"
@@ -41,16 +41,9 @@ const Footer = () => {
                 src={`static/images/jnce-logo.jpg`}
               />
             </div>
-            <div>
-              <span className="text-2xl tracking-wide">
-                We care about what you aim for
-              </span>
-            </div>
-            <div className="flex gap-4">
-              {/* <div><a href="#"><span><FacebookIcon className="h-7 w-7" aria-hidden="true" /></span></a></div>
-              <div><a href="#"><span><YoutubeIcon className="h-7 w-7" aria-hidden="true" /></span></a></div>
-              <div><a href="#"><span><MailIcon className="h-7 w-7" aria-hidden="true" /></span></a></div> */}
-            </div>
+            <span className="text-2xl tracking-wide">
+              We care about what you <br /> aim for
+            </span>
             <div><span>&nbsp;</span></div>
           </div>
         </div>
