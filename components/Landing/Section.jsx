@@ -8,7 +8,7 @@ const Section = () => {
   return (
     <div>
       <About />
-      <Services />
+      {/* <Services /> */}
       <Contact />
     </div>
   )
