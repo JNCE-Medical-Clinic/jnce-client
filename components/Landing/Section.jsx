@@ -6,11 +6,11 @@ import Contact from "./Section/Contact";
 
 const Section = () => {
   return (
-    <React.Fragment>
+    <div>
       <About />
       <Services />
       <Contact />
-    </React.Fragment>
+    </div>
   )
 }
 

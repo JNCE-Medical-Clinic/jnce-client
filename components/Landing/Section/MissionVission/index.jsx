@@ -19,7 +19,7 @@ export default function MissionVisionSection() {
         scrollTrigger: {
           trigger: sliderRightRef.current,
           start: "top top",
-          end: () => `+=${sliderRightRef.current.offsetHeight}`,
+          end: () => `+=${sliderRightRef.current?.offsetHeight}`,
           scrub: true,
           pin: true,
         },
