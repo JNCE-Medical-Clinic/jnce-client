@@ -1,4 +1,6 @@
+import { data } from "autoprefixer";
 import { useState, useEffect } from "react";
+import _ from "lodash"
 
 export const useOnScreen = (ref, rootMargin = "0px") => {
   const [isIntersecting, setIntersecting] = useState(false);
@@ -30,3 +32,12 @@ export const useOnScreen = (ref, rootMargin = "0px") => {
 
   return isIntersecting;
 };
+
+
+export const handlePhoneNumberValidation = (phone) => {
+    if(_.take(phone, 2).join("") != "63"){ return false }
+    if(phone.length > 12){ return false }
+    if(phone.length < 12){ return false }
+    return true
+
+}

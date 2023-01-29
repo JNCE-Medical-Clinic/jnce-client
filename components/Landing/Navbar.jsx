@@ -72,7 +72,7 @@ const Navbar = () => {
 
           {/* buttons */}
           <div className="app__navbar--buttons flex items-center absolute custom:right-20 sm:right-20 md:right-[10rem] lg:right-[15rem] xl:right-[15rem] 2xl:right-[15rem]">
-            <Link href="/login">
+            <Link href="/auth/login">
               <div className="cursor-pointer custom:mt-5 sm:mt-5 md:mt-0 lg:mt-0 xl:mt-0 2xl:mt-0 text-3xl flex items-center gap-2 font-semibold">
                 <MdOutlineLogin size={30} />
                 Log In
