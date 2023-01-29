@@ -27,7 +27,6 @@ export default function Home() {
   }, []);
 
   return (
-    <React.Fragment>
       <AnimateSharedLayout type="crossfade">
         <AnimatePresence>
           {loading ? (
@@ -66,6 +65,5 @@ export default function Home() {
           )}
         </AnimatePresence>
       </AnimateSharedLayout>
-    </React.Fragment>
   );
 }
