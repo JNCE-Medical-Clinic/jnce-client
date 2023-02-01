@@ -1,43 +1,34 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 // component
 import { useForm, Controller } from 'react-hook-form'
-import PhoneInput from 'react-phone-input-2'
-import 'react-phone-input-2/lib/style.css'
-
+// import { handlePhoneNumberValidation } from '../../helpers/helpers'
+import { handlePhoneNumberValidation } from '../../helpers/helpers'
+import ContactInput from '../../components/Common/ContactInput'
 
 const Login = () => {
 
-    const { control, handleSubmit, getValues, watch, formState : { errors } }  = useForm({
+    const { control, handleSubmit, formState : { errors } }  = useForm({
         defaultValues : {
             phone : null,
         }
     })
     const onsubmit = (data) => {
-        console.log("phone: ", data.phone.slice(2))
-        console.log("length: ", data.phone.slice(2).length)
+        console.log(data.phone) // FOR API CALL
     }
     return (
-        <div className='bg-gray-300 h-screen grid place-items-center'>
+        <div className='h-screen grid place-items-center'>
             <div className='grid place-items-center gap-4'>
                 <Controller 
                     control={control}
                     rules={{
                         required: true,
-                        // pattern : /^[0-9*\+]+$/
-                        
+                        validate: (value) => {
+                           return handlePhoneNumberValidation(value)
+                        }
                     }}
                     render={( { field: { onChange, value } }) => (
-                        <PhoneInput
-                            inputProps={{
-                                name: 'phone',
-                                required: true,
-                                autoFocus: true
-                            }}
-                            country={'ph'}
-                            onlyCountries={["ph"]}
-                            disableDropdown
-                            placeholder='Enter phone number'
+                        <ContactInput 
                             value={value}
                             onChange={onChange}
                         />

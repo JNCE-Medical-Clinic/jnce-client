@@ -29,6 +29,7 @@
     "react-intersection-observer": "^8.32.2",
     "react-lazy-load-image-component": "^1.5.1",
     "react-map-gl": "^7.0.0",
+    "react-otp-input": "^2.4.0",
     "react-phone-input-2": "^2.15.1",
     "react-query": "^3.39.3",
     "react-select": "^5.7.0",
