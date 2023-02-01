@@ -14,3 +14,7 @@
 @import "components/marquee";
 @import "components/loader";
 @import "components/contact";
+
+* {
+  scroll-behavior: smooth;
+}
