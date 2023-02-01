@@ -1,5 +1,40 @@
-// services section
+// description section
+.description__container {
+  background-color: #e4e4e7;
+  max-width: 75%;
+  margin: 0 auto;
+  padding: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
+  .description--text {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+
+    @media (max-width: $layout-breakpoint-tablet) {
+      font-size: 1rem;
+    }
+
+    @media (min-width: $layout-breakpoint-mini-medium) {
+      font-size: 1.75rem;
+    }
+
+    @media (min-width: $layout-breakpoint-medium) {
+      font-size: 2rem;
+    }
+
+    @media (min-width: $layout-breakpoint-large) {
+      font-size: 4rem;
+    }
+  }
+
+  .description--middle {
+    font-weight: 700;
+  }
+}
+
+// services section
 .slider__container {
   grid-template-columns: repeat(2, 1fr);
 
