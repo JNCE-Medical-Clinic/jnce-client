@@ -6,33 +6,36 @@ import Image from "../Common/Image";
 
 import { 
   MdOutlineLogin,
+  MdMedicalServices,
+  MdInfo,
+  MdPhoneInTalk
 } from "react-icons/md";
-
-import { GiHamburgerMenu } from 'react-icons/gi';
+import { BiMenuAltRight } from 'react-icons/bi';
 import { IoIosClose } from 'react-icons/io';
 
 const Navbar = () => {
-  // state management
+  const [width, setWidth] = useState(0);
   const [toggleMenu, setToggleMenu] = useState(false);
 
-  // useEffect
-  if (typeof window !== "undefined") {
-    useEffect(() => {
-      window.addEventListener('resize', () => {
-        let myWidth  = window.innerWidth;
-        setToggle(myWidth)
-     })
-    }, [window])
-  }
+  useEffect(() => {
+    setWidth(window.innerWidth);
 
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [])
 
   useEffect(() => {
-  }, [toggleMenu])
-
-  const setToggle = (width) => {
-    if (width > 1440) {
-      setToggleMenu(false);
+    if (width < 961) {
+      setToggleMenu(false)
     }
+  }, [width])
+
+  const handleToggle = function() {
+    setToggleMenu(!toggleMenu)
   }
 
   return (
@@ -43,71 +46,87 @@ const Navbar = () => {
         transition={{
           ease: "easeInOut",
           duration: 1,
-          delay: 0.6,
+          delay: 1,
         }}
-        className="app__navbar flex justify-center mb-20"
+        className="navbar__container bg-neutral-200 grid grid-cols-3 place-items-center relative p-6 whitespace-nowrap"
       >
-        <div className="app__navbar--container w-full flex items-center justify-between">
-          {/* logo */}
-          <div className="app__navbar--logo">
-            <Image
-              src={`/static/images/jnce-logo.jpg`}
-              alt="logo"
-              className="mt-10 w-3/4 custom:w-2/4 xl:w-3/4 2xl:w-3/4 custom:ml-5 xl:ml-0 2xl:ml-0"
-            />
-          </div>
+        <div>
+          <Image className="w-1/2" src={`static/images/jnce-logo.jpg`} alt="logo" />
+        </div>
 
-          {/* main nav */}
-          <nav className="app__navbar--links flex w-full md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-semibold items-center justify-center absolute left-1/2">
-            <li>
-              <a href="#services">Services</a>
-            </li>
-            <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <a href="#contact">Contact Us</a>
-            </li>
-          </nav>
+        {/* hide if not mobile layout */}
+        <nav className="navbar__links font-semibold text-4xl">
+          <li>
+            <a href="#services">Services</a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#contact">Contact Us</a>
+          </li>
+        </nav>
 
-          {/* buttons */}
-          <div className="app__navbar--buttons flex items-center absolute custom:right-20 sm:right-20 md:right-[10rem] lg:right-[15rem] xl:right-[15rem] 2xl:right-[15rem]">
-            <Link href="/book-appointment">
-              <div className="cursor-pointer custom:mt-5 sm:mt-5 md:mt-0 lg:mt-0 xl:mt-0 2xl:mt-0 text-3xl flex items-center gap-2 font-semibold">
-                <MdOutlineLogin size={30} />
-                Log In
-              </div>
-            </Link>
+        <div className="flex items-center gap-5">
+          <Link href="/auth/login">
+            <div className="cursor-pointer flex items-center">
+              <MdOutlineLogin size={30} />
+              <span className="ml-1 text-2xl font-semibold">Log In</span>
+            </div>
+          </Link>
+
+          {/* mobile layout */}
+          <div className="navbar__menu cursor-pointer">
+            {toggleMenu ? (
+              <>
+                <IoIosClose
+                  size={30}
+                  onClick={handleToggle}
+                />
+              </>
+            ) : (
+              <>
+                <BiMenuAltRight
+                  size={30}
+                  onClick={handleToggle}
+                />
+              </>
+            )}
           </div>
         </div>
       </motion.div>
 
-      <motion.div 
-        initial={{ opacity: 0, y: -180 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          ease: "easeInOut",
-          duration: 1,
-          delay: 0.6,
-        }}
-        className="app_navbar--mobile"
-      >
-          <nav className="app_navbar--mobile--links flex justify-center custom:text-3xl sm:text-3xl md:text-4xl font-semibold gap-10 mb-10">
-            <li>
-              <a href="#services">Services</a>
-            </li>
-            <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <a href="#contact">Contact Us</a>
-            </li>
-          </nav>
-      </motion.div>
+      {toggleMenu ? (
+        <>
+          <motion.div 
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: '100%', opacity: 1 }}
+            transition={{
+              ease: "easeInOut",
+            }}
+            className="navbar__menu--container sticky bg-neutral-200 pb-14 drop-shadow-md max-w-[85%] -mt-8 z-10 w-screen overflow-hidden flex flex-col justify-center items-start"
+          >
+            <div className="navbar__menu--line w-full h-[0.1rem] bg-green-700"></div>
+            <nav className="navbar__menu--links w-full mt-4 font-bold text-2xl ml-20 relative">
+              <li className="mt-2 flex items-center gap-2">
+                <MdMedicalServices size={30} color="green" />
+                <a href="#services">Services</a>
+              </li>
 
-      <div className="app_navbar--line bg-white w-screen h-[2px]"></div>
+              <li className="mt-10 flex items-center gap-2">
+                <MdInfo size={30} color="green" />
+                <a href="#about">About</a>
+              </li>
+
+              <li className="mt-10 flex items-center gap-2">
+                <MdPhoneInTalk size={30} color="green" />
+                <a href="#contact">Contact Us</a>
+              </li>
+            </nav>
+          </motion.div>
+        </>
+      ) : null}
     </div>
-    
   )
 }
 
