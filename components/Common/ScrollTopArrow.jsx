@@ -30,7 +30,7 @@ const ScrollTopArrow = () => {
       <FaArrowCircleUp
         onClick={scrollTop}
         fontSize={60}
-        className="scrollTop fixed right-[50px] bottom-[10%] cursor-pointer z-[1000] transition duration-75 hover:animate-bounce active:animate-ping"
+        className="scrollTop fixed right-[50px] bottom-[10%] cursor-pointer z-[1000] transition duration-75 active:animate-ping"
         style={{ height: 40, display: showScroll ? 'flex' : 'none' }}
       />
       <style jsx>
