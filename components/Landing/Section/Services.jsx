@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
 import { gsap } from "gsap/dist/gsap";
@@ -37,7 +37,6 @@ const Services = () => {
   )
 
   useEffect(() => {
-    console.log(inViewDown)
     // scale up
     if (inView) {
       scaleUp.start({
@@ -108,7 +107,7 @@ const Services = () => {
             >
               <Image
                 className="custom:w-full sm:w-3/4 md:w-3/4 lg:w-[60%] xl:w-[65%] 2xl:w-3/4 mt-10"
-                src={`static/images/service-1.jpg`} alt="service-1" />
+                src={`static/images/service-4.jpg`} alt="service-4" />
             </motion.div>
 
             <motion.div
@@ -117,7 +116,7 @@ const Services = () => {
             >
               <Image
                 className="custom:w-full sm:w-3/4 md:w-3/4 lg:w-[60%] xl:w-[65%] 2xl:w-3/4"
-                src={`static/images/service-2.jpg`} alt="service-2" />
+                src={`static/images/service-5.jpg`} alt="service-5" />
             </motion.div>
 
             <motion.div
@@ -126,7 +125,7 @@ const Services = () => {
             >
               <Image
                 className="custom:w-full sm:w-3/4 md:w-3/4 lg:w-[60%] xl:w-[65%] 2xl:w-3/4 mt-10" 
-                src={`static/images/service-3.jpg`} alt="service-3" />
+                src={`static/images/service-6.jpg`} alt="service-6" />
             </motion.div>
           </div>
         </div>
@@ -141,7 +140,7 @@ const Services = () => {
             >
               <Image
                 className="custom:w-full sm:w-3/4 md:w-3/4 lg:w-[60%] xl:w-[65%] 2xl:w-3/4 -mt-20"
-                src={`static/images/service-1.jpg`} alt="service-1" />
+                src={`static/images/service-7.jpg`} alt="service-7" />
             </motion.div>
             
             <motion.div
@@ -150,7 +149,7 @@ const Services = () => {
             >
               <Image
                 className="custom:w-full sm:w-3/4 md:w-3/4 lg:w-[60%] xl:w-[65%] 2xl:w-3/4"
-                src={`static/images/service-2.jpg`} alt="service-2" />
+                src={`static/images/service-8.jpg`} alt="service-8" />
             </motion.div>
             
             <motion.div
@@ -159,7 +158,7 @@ const Services = () => {
             >
               <Image
                 className="custom:w-full sm:w-3/4 md:w-3/4 lg:w-[60%] xl:w-[65%] 2xl:w-3/4 -mt-20" 
-                src={`static/images/service-3.jpg`} alt="service-3" />
+                src={`static/images/service-9.jpg`} alt="service-9" />
             </motion.div>
             
           </div>
@@ -171,7 +170,7 @@ const Services = () => {
             >
               <Image
                 className="custom:w-full sm:w-3/4 md:w-3/4 lg:w-[60%] xl:w-[65%] 2xl:w-3/4 mt-10"
-                src={`static/images/service-1.jpg`} alt="service-1" />
+                src={`static/images/service-10.jpg`} alt="service-10" />
             </motion.div>
 
             <motion.div
@@ -180,7 +179,7 @@ const Services = () => {
             >
               <Image
                 className="custom:w-full sm:w-3/4 md:w-3/4 lg:w-[60%] xl:w-[65%] 2xl:w-3/4"
-                src={`static/images/service-2.jpg`} alt="service-2" />
+                src={`static/images/service-11.jpg`} alt="service-11" />
             </motion.div>
 
             <motion.div
@@ -189,7 +188,7 @@ const Services = () => {
             >
               <Image
                 className="custom:w-full sm:w-3/4 md:w-3/4 lg:w-[60%] xl:w-[65%] 2xl:w-3/4 mt-10" 
-                src={`static/images/service-3.jpg`} alt="service-3" />
+                src={`static/images/service-12.jpg`} alt="service-12" />
             </motion.div>
           </div>
         </div>
