@@ -7,13 +7,19 @@
 @import "base/reset";
 @import "base/typography";
 
+/* ========== Landing ========== */
+@import "landing/navbar";
+@import "landing/banner";
+@import "landing/section";
+@import "landing/marquee";
+@import "landing/loader";
+@import "landing/contact";
+
 /* ========== Components ========== */
-@import "components/navbar";
-@import "components/banner";
-@import "components/section";
-@import "components/marquee";
-@import "components/loader";
-@import "components/contact";
+@import "components/steps";
+
+/* ========== Auth ========== */
+@import "auth/authHeader";
 
 * {
   scroll-behavior: smooth;

@@ -5,16 +5,16 @@ const ContactInput = ({ value, onChange, containerStyle, inputStyle }) => {
   return (
       <PhoneInput
         inputProps={{
-            name: 'phone',
-            required: true,
-            autoFocus: true
+          name: 'phone',
+          required: true,
+          autoFocus: true
         }}
         inputStyle={inputStyle}
         containerStyle={containerStyle}
         country={'ph'}
         onlyCountries={["ph"]}
         disableDropdown
-        placeholder='Enter phone number'
+        placeholder='(+63) Enter phone number'
         value={value}
         onChange={onChange}
     />

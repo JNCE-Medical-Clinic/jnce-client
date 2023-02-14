@@ -68,7 +68,7 @@ const Navbar = () => {
         </nav>
 
         <div className="flex items-center gap-5">
-          <Link href="/auth/login">
+          <Link href="/auth/register">
             <div className="cursor-pointer flex items-center">
               <MdOutlineLogin size={30} />
               <span className="ml-1 text-2xl font-semibold">Log In</span>

@@ -1,0 +1,36 @@
+.auth__header {
+  max-width: 75%;
+  margin: 0 auto;
+  text-align: center;
+  white-space: nowrap;
+
+  @media (max-width: $layout-breakpoint-tablet) {
+    text-align: right;
+    white-space: normal;
+  }
+
+  span {
+    font-size: 3rem;
+
+    @media (max-width: $layout-breakpoint-medium) {
+      font-size: 2.75rem;
+    }
+
+    @media (max-width: $layout-breakpoint-mini-medium) {
+      font-size: 2.5rem;
+    }
+
+    @media (max-width: $layout-breakpoint-tablet) {
+      font-size: 2rem;
+    }
+
+    @media (max-width: $layout-breakpoint-xsmall) {
+      font-size: 1.75rem;
+    }
+  }
+}
+
+.auth__line {
+  max-width: 75%;
+  margin: 0 auto;
+}

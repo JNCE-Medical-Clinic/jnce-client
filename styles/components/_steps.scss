@@ -1,0 +1,14 @@
+.steps__container {
+  max-width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.step-description {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+
+  @media (max-width: $layout-breakpoint-xsmall) {
+    font-size: 1.5rem;
+  }
+}
