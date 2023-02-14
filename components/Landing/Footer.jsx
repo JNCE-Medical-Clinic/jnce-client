@@ -50,7 +50,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom */}
-      <div className="footer__copyright mb-10 h-auto px-8 py-12 bg-[#f6f6f9] text-slate-500 font-semibold flex flex-col items-center justify-center custom:text-2xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-4xl">
+      <div className="footer__copyright h-auto px-8 py-12 bg-[#f6f6f9] text-slate-500 font-semibold flex flex-col items-center justify-center custom:text-2xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-4xl">
         <div className="footer__copyright--detail text-center"><span>Copyright &copy; 2010 JNCE Medical and Diagnostic Clinic. All Rights Reserved</span></div>
       </div>
     </div>
