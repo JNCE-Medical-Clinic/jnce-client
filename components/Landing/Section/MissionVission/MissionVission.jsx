@@ -8,7 +8,6 @@ export default function MissionVission({ title, description, updateActive, index
 
   useEffect(() => {
     if (onScreen) {
-      console.log(index);
       updateActive(index);
     }
   }, [onScreen, index]);
