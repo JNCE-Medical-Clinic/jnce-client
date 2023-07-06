@@ -1,22 +1,60 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
+import { supabase } from "../../../services/supabase";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import SyncLoader from "react-spinners/SyncLoader";
 
 import Image from "../../Common/Image";
 import TextInput from "../../Common/TextInput";
 
 const Contact = () => {
+  const [loading, setLoading] = useState(false);
+  const [errorSubmitting, setErrorSubmitting] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
   const { control, handleSubmit, formState: { errors }} = useForm({
     defaultValues: {
       fullName: '',
       email: '',
       phone: '',
-      // service: [],
       message: ''
     }
   })
 
-  const onSubmit = (data) => {
-    console.log(data)
+  const notify = () => toast.success("Message submitted successfully!");
+  const notifyError = () => toast.error("Error submtting message");
+
+  const onSubmit = async (input) => {
+    setLoading(true);
+
+    const full_name = input?.fullName
+    const email = input?.email
+    const contact_no = input?.phone
+    const message = input?.message
+
+    const { data, error } = await supabase
+      .from('contact_us')
+      .insert([
+        {
+          full_name,
+          email,
+          contact_no,
+          message
+        }
+      ]);
+
+      setLoading(true);
+
+      if (error) {
+        setLoading(false);
+        setErrorSubmitting(true);
+        notifyError();
+      } else {
+        setLoading(false);
+        setSubmitting(true);
+        notify();
+      }
   }
 
   return (
@@ -97,10 +135,56 @@ const Contact = () => {
           </div>
         </div>
 
-        <button
-          onClick={handleSubmit(onSubmit)}
-          className="mt-10 mb-40 text-3xl cursor-pointer bg-violet-700 px-4 py-5 text-white rounded"
-        >Send your concern</button>
+        {loading ? (
+          <>
+            <div className="mt-10 mb-40">
+              <SyncLoader
+                color="#15803d"
+                loading={loading}
+                size={20}
+                aria-label="Loading Spinner"
+                data-testid="loader"
+              />
+            </div>
+          </>
+        ) : (
+          <>
+            <button
+              onClick={handleSubmit(onSubmit)}
+              className="mt-10 mb-40 text-3xl cursor-pointer bg-violet-700 px-4 py-5 text-white rounded"
+            >Send your concern</button>
+          </>
+        )}
+
+        {submitting &&
+          <ToastContainer
+            position="top-center"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
+        }
+
+        {errorSubmitting &&
+          <ToastContainer
+            position="top-center"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
+        }
       </div>
     </div>
   )
